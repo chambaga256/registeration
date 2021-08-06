@@ -5,10 +5,12 @@ import { Link,useLocation } from "react-router-dom";
 import logo from "../../images/logo.png";
 import useStyles from "./style";
 import {useHistory } from "react-router-dom";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 function Header() {
   const space = { marginLeft: "10px" };
   const classes = useStyles();
   const location = useLocation();
+ 
   const [user,setUser]= useState(JSON.parse(localStorage.getItem('profile')));
   useEffect(()=>{
       const Token = user?.token;
@@ -32,19 +34,28 @@ function Header() {
               <Typography style={space} variant="subtitle2">
                 Internship Courses
               </Typography>
-              <Typography style={space} variant="subtitle2" >
-                About
+              <Typography style={space} variant="subtitle2" 
+              component={Link}  to="/Dashboard"
+              >
+                About 
+             
               </Typography>
             </div>
           </Grid>
           <Grid item sm></Grid>
+          
           <Grid item className={classes.button}>
+          
+          
+    
+      
+              
             <Customized.Button
               variant="text"
               text="Sign In"
               component={Link}
               to="/login"
-            />
+          />
             <Customized.Button
               component={Link}
               to="/signup"

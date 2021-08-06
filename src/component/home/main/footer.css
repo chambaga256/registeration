@@ -1,0 +1,194 @@
+
+
+.footer{
+    background-color:rgb(3,18,35);
+    color: #fff;
+    padding: 0px;
+}
+.footer__details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*media queries*/
+@media only screen and (max-width:768px){
+    .footer{
+
+        background-color:rgb(3,18,35);
+        color: #fff;
+        cursor: pointer;
+        height:fit-content;
+        padding: 0;
+    }
+    .footer__details{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+
+    }
+    .footer__right{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex:1;
+        margin-left:-20%;
+    }
+    .footer__right>div{
+        padding: 25px;
+    }
+    .facebook{
+        border-radius: 50% !important; 
+        background-color: rgb(11,126,234);
+        padding: 0.11em;
+    }
+
+}
+.footer__left{
+    display: flex;
+    margin-top: 10px;
+
+}
+.footer__leftContent{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 10px;
+}
+.footer__leftContent>h4{
+    margin-bottom: -10px;
+}
+.footer__right{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex:0.2;
+}
+.footer__logo{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.footer__rightIconFacebook{
+    color:#fff;
+    cursor: pointer;
+}
+.footer__rightIconTwitter{
+    color:#fff;
+    cursor: pointer;
+}
+.footer__rightIconYouTube{
+  color:#fff;
+  cursor: pointer;
+}
+.facebook{
+    border-radius: 50% !important; 
+    background-color: rgb(11,126,234);
+    padding: 0.11em;
+}
+.twitter{
+    border-radius: 50% !important; 
+    background-color: rgb(29,161,243);
+    padding: 0.11em;
+}
+.youtube{
+    border-radius: 50% !important; 
+    background-color: red;
+    padding: 0.11em;
+}
+.footer{
+    background-color:rgb(3,18,35);
+    color: #fff;
+    padding: 0px;
+}
+.footer__details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*media queries*/
+@media only screen and (max-width:768px){
+    .footer{
+
+        background-color:rgb(3,18,35);
+        color: #fff;
+        cursor: pointer;
+        height:fit-content;
+        padding: 0;
+    }
+    .footer__details{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+
+    }
+    .footer__right{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex:1;
+        margin-left:-20%;
+    }
+    .footer__right>div{
+        padding: 25px;
+    }
+    .facebook{
+        border-radius: 50% !important; 
+        background-color: rgb(11,126,234);
+        padding: 0.11em;
+    }
+
+}
+.footer__left{
+    display: flex;
+    margin-top: 10px;
+
+}
+.footer__leftContent{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 10px;
+}
+.footer__leftContent>h4{
+    margin-bottom: -10px;
+}
+.footer__right{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex:0.2;
+}
+.footer__logo{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.footer__rightIconFacebook{
+    color:#fff;
+    cursor: pointer;
+}
+.footer__rightIconTwitter{
+    color:#fff;
+    cursor: pointer;
+}
+.footer__rightIconYouTube{
+  color:#fff;
+  cursor: pointer;
+}
+.facebook{
+    border-radius: 50% !important; 
+    background-color: rgb(11,126,234);
+    padding: 0.11em;
+}
+.twitter{
+    border-radius: 50% !important; 
+    background-color: rgb(29,161,243);
+    padding: 0.11em;
+}
+.youtube{
+    border-radius: 50% !important; 
+    background-color: red;
+    padding: 0.11em;
+}

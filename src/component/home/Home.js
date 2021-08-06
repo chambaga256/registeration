@@ -8,6 +8,7 @@ import UserHeader from "../header/userHeader";
 
 import useStyles from './styles';
 import StudentRegister from "../register/studentRegister";
+import Banner from "../banner/Banner";
 export default function Home() {
   const space = { marginLeft: "10px" };
   const classes = useStyles();
@@ -25,7 +26,7 @@ export default function Home() {
       {!user ? (
         <div>
           <Header />
-          <MainUp />
+          <Banner />
           <MainMiddle />
           <Footer />
         </div>
