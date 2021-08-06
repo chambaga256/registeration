@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { getStudents } from "../Actions/student";
 import StudentRegister from "../component/register/studentRegister";
 import Register from "../component/register/Register";
+import Dashboard from "../Dashboard/Dashboard";
 
  
 
@@ -30,6 +31,9 @@ const App = () => {
         <Route path='/signup' exact component={SignUp}/>
         <Route path='/admin/dashboard' exact component={Register}/>
         <Route path='/student/dashboard' exact component={StudentRegister}/>
+        <Route path='/Login' exact component={Login}/>
+        <Route path='/Signup' exact component={SignUp}/>
+        <Route path='/Dashboard' exact component={Dashboard} />
       </Switch>
       <CssBaseline />
     </ThemeProvider>

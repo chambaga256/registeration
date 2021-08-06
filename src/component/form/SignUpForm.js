@@ -26,11 +26,11 @@ export default function SignUpForm() {
   };
   const googleSuccess = (res) => {
     const result = res?.profileObj;
-    const Token = res?.tokenId;
+    const token = res?.tokenId;
     try {
       dispatch({
         type: AUTH,
-        payload: { result, Token },
+        payload: { result, token },
       });
       history.push("/");
     } catch (error) {

@@ -26,7 +26,6 @@ export default makeStyles((theme)=>({
     mainTop:{
         backgroundColor:'#A3BCB6',
         objectFit:'contain',
-        marginTop:theme.spacing(8),
         backgroundPosition: 'center', 
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat',
@@ -37,7 +36,7 @@ export default makeStyles((theme)=>({
         }
     },
     Toppaper:{
-        height:'70vh',
+        marginTop:theme.spacing(30),
     },
     maindiv:{
         margin:theme.spacing(6)

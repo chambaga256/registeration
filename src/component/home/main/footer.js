@@ -1,36 +1,49 @@
-import React from "react";
-import useStyles from "../styles";
-import { Grid, Typography } from "@material-ui/core";
-import { Customized } from "../../customized/customized";
-import cisco from "../../../images/Cisco.png";
-import adobe from "../../../images/Adobe.jpg";
-export default function Footer() {
-  const classes = useStyles();
-  return (
-    <Grid container justify="center">
-      <Grid className={classes.gridFooter}>
-        <Grid item >
-          <Typography variant="h5">StratCom</Typography>
-        </Grid>
-        <Grid item >
-          <Typography variant="h5">Programs</Typography>
-        </Grid>
-        <Grid item >
-          <Typography variant="h5">News</Typography>
-        </Grid>
-        <Grid item >
-          <Typography variant="h5">Support</Typography>
-          <Typography variant="caption">Platform support</Typography>
-          <Typography variant="caption">Platform status</Typography>
-          <Typography variant="caption">Bugs</Typography>
-        </Grid>
-        <Grid item>
-          <Typography variant="h5">Terms and Policies</Typography>
-          <Typography variant="caption">Platform policies</Typography>
-          <Typography variant="caption">Platform terms</Typography>
-          <Typography variant="caption">Platform service</Typography>
-        </Grid>
-      </Grid>
-    </Grid>
-  );
+import React from 'react';
+import './footer.css';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+const Footer = () => {
+    return (
+        <div className="footer">
+            <div className="footer__details">
+                <div className="footer__left">
+                    <img alt="" src="/images/logo.jpeg"
+
+                        className="footer__logo"
+                    />
+                    <div className="footer__leftContent">
+                        <h4>Stratcom-Ug</h4>
+                    </div>
+                </div>
+                <div className="footer__middle">
+                    <p>@2021 Stratcom-Ug All rights reserved</p>
+                </div>
+                <div className="footer__right">
+                    <div className="footer__rightIconFacebook">
+                        <FacebookIcon
+
+
+                                className="facebook" />
+                    </div>
+
+                    <div className="footer__rightIconTwitter">
+                        <TwitterIcon
+
+                            className="twitter" />
+                    </div>
+                    <div className="footer__rightIconYouTube">
+                        <YouTubeIcon
+
+
+                            className="youtube" />
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    )
 }
+
+export default Footer;

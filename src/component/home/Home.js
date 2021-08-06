@@ -11,6 +11,7 @@ import StudentRegister from "../register/studentRegister";
 import Register from "../register/Register";
 import RegisterForm from "../form/RegisterForm";
 import Users from "./users/Users";
+import Banner from "../banner/Banner";
 export default function Home() {
   const space = { marginLeft: "10px" };
   const classes = useStyles();
@@ -30,7 +31,7 @@ export default function Home() {
       {!user ? (
         <div>
           <Header />
-          <MainUp />
+          <Banner />
           <MainMiddle />
           <Footer />
         </div>
