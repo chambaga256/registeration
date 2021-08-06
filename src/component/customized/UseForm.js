@@ -36,15 +36,16 @@ export function UseForm(state, validationOnChange = false) {
       ...values,
       [name]: value,
     });
+    if(validationOnChange)
+      validate({
+        [name]:value
+      })
   };
   // function on the login page but allow switch back and forth
   const nextpage = () => {
     setNext((prevnext) => !prevnext);
     
   };
-  const handleSubmit = (e) => {
-    e.preventDefault()
-};
   return {
     values,
     errors,
@@ -56,11 +57,10 @@ export function UseForm(state, validationOnChange = false) {
     next,
     nextpage,
     validate,
-    handleSubmit,
   };
 }
 
-export function Form({ children,onSubmit, ...other }) {
+export function Form({ children, ...other }) {
   const classes = useStyles();
   return (
     <form className={classes.root} autoComplete="off" {...other}>

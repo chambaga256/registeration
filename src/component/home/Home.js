@@ -6,14 +6,18 @@ import MainUp from "./main/mainUp";
 import { useLocation } from "react-router-dom";
 import UserHeader from "../header/userHeader";
 
-import useStyles from './styles';
+import useStyles from "./styles";
 import StudentRegister from "../register/studentRegister";
+import Register from "../register/Register";
+import RegisterForm from "../form/RegisterForm";
 export default function Home() {
   const space = { marginLeft: "10px" };
   const classes = useStyles();
   const location = useLocation();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
-  const [administrator,setAdministrator] = useState(JSON.parse(localStorage.getItem("profile")));
+  const [administrator, setAdministrator] = useState(
+    JSON.parse(localStorage.getItem("profile"))
+  );
   useEffect(() => {
     const Token = user?.token;
     setUser(JSON.parse(localStorage.getItem("profile")));
@@ -36,9 +40,7 @@ export default function Home() {
             name={user.result.name}
             setUser={setUser}
           />
-          <StudentRegister 
-          name={user.result.name.charAt(0)} 
-          />
+          <StudentRegister name={user.result.name.charAt(0)} />
         </div>
       )}
     </React.Fragment>

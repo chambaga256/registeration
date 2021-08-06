@@ -1,17 +1,27 @@
 import { Grid } from "@material-ui/core";
-import React,{useState} from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createStudent,updateStudent } from "../../Actions/student";
 import { Customized } from "../customized/customized";
 import { UseForm, Form } from "../customized/UseForm";
-import {internshipService,state } from "../state/state";
+import { internshipService, state } from "../state/state";
 import useStyles from "./styles";
-export default function RegisterForm() {
-  const [registerData,setRegisterData]= useState(state);
+export default function RegisterForm({currentID,setCurrentID}) {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const { values, setValues, handleInputChange } = UseForm(state);
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(registerData)
-};
+    e.preventDefault();
+    if(currentID){
+        dispatch(updateStudent(currentID,values));
+    }else{
+      dispatch(createStudent(values));
+    }
+    Clear()
+  };
+  const Clear = () => {
+    setValues(state);
+  };
   return (
     <Form onSubmit={handleSubmit}>
       <Grid container>
@@ -53,7 +63,7 @@ export default function RegisterForm() {
             label="Internship Service"
             value={values.internshipCourse}
             onChange={handleInputChange}
-            options={internshipService}
+            InternshipCourses={internshipService}
           />
 
           <Customized.RadioGroup
@@ -64,8 +74,13 @@ export default function RegisterForm() {
           />
 
           <div className={classes.button}>
-            <Customized.Button size="medium" text="Submit" variant="text" type='submit'/>
-            <Customized.Button size="medium" text="Clear" />
+            <Customized.Button
+              size="medium"
+              text="Submit"
+              variant="text"
+              type="submit"
+            />
+            <Customized.Button size="medium" text="Clear" onClick={Clear} />
           </div>
         </Grid>
       </Grid>

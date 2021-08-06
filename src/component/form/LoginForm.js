@@ -15,13 +15,14 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { Image } from "../../images/Img";
 import { Link, useHistory } from "react-router-dom";
-import EmailIcon from '@material-ui/icons/Email';
+import EmailIcon from "@material-ui/icons/Email";
 import Forgot from "../forgot/Forgot";
 import GoogleLogin from "react-google-login";
 import { AUTH } from "../../Actions/types";
 import { useDispatch } from "react-redux";
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import { signin } from "../../Actions/login";
 export default function LoginForm(props) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -31,12 +32,13 @@ export default function LoginForm(props) {
   const {
     values,
     errors,
+    setValules,
     handleShowPassword,
     showPassword,
     handleInputChange,
     next,
     nextpage,
-    handleSubmit,
+    validate,
   } = UseForm(state, true);
 
   const googleFailure = (error) => {
@@ -45,18 +47,21 @@ export default function LoginForm(props) {
   };
   const googleSuccess = async (res) => {
     const result = res?.profileObj;
-    const Token = res?.tokenId;
+    const token = res?.tokenId;
     try {
       dispatch({
         type: AUTH,
-        payload: { result, Token },
+        payload: { result, token },
       });
       history.push("/");
     } catch (error) {
       googleFailure();
     }
   };
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(signin(values,history))
+  };
   return (
     <Paper className={classes.paper}>
       <Form onSubmit={handleSubmit}>
@@ -110,7 +115,7 @@ export default function LoginForm(props) {
                   <Customized.Input
                     name="password"
                     label="Password"
-                    type={showPassword?'text':'password'}
+                    type={showPassword ? "text" : "password"}
                     error={errors.password}
                     required
                     value={values.password}
@@ -119,17 +124,21 @@ export default function LoginForm(props) {
                       endAdornment: (
                         <InputAdornment position="end">
                           <IconButton onClick={handleShowPassword}>
-                            {showPassword?<Visibility/>:<VisibilityOff/>}
+                            {showPassword ? <Visibility /> : <VisibilityOff />}
                           </IconButton>
                         </InputAdornment>
                       ),
-                    }}                                              
+                    }}
                   />
                 </div>
 
                 <div>
                   <Typography
-                    style={{ padding: "10px", paddingLeft: "38px",cursor:'pointer' }}
+                    style={{
+                      padding: "10px",
+                      paddingLeft: "38px",
+                      cursor: "pointer",
+                    }}
                     variant="subtitle2"
                     align="center"
                     onClick={() => setPopup(true)}

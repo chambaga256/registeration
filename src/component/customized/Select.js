@@ -1,6 +1,6 @@
 import React from 'react';
 import {FormControl, InputLabel, MenuItem, Select as MuiSelect} from '@material-ui/core';
-export default function Select({label,name,value,onChange,size,options}){
+export default function Select({label,name,value,onChange,size,InternshipCourses}){
     return(
         <FormControl>
             <InputLabel>{label}</InputLabel>
@@ -13,8 +13,8 @@ export default function Select({label,name,value,onChange,size,options}){
             >
                 <MenuItem value=''>none</MenuItem>
                 {
-                    options.map(option=>(
-                        <MenuItem key={option.id} value={option.id}>{option.title}</MenuItem>
+                    InternshipCourses.map(InternshipCourse=>(
+                        <MenuItem key={InternshipCourse.id} value={InternshipCourse.title}>{InternshipCourse.title}</MenuItem>
                     ))
                 }
             </MuiSelect>

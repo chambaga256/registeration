@@ -13,11 +13,12 @@ import { AUTH } from "../../Actions/types";
 import { useDispatch } from "react-redux";
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import { signup } from "../../Actions/login";
+
 export default function SignUpForm() {
-  const [signUData, setSignUData] = useState(state);
   const dispatch = useDispatch();
   const history = useHistory();
-  const { values, handleInputChange,handleShowPassword,showPassword, validate, handleSubmit } = UseForm(state, true);
+  const { values, handleInputChange,handleShowPassword,showPassword,errors,setErrors, validate,setValues} = UseForm(state, true);
   const classes = useStyles();
   const googleFailure = (error) => {
     console.log(error);
@@ -35,6 +36,10 @@ export default function SignUpForm() {
     } catch (error) {
       googleFailure();
     }
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(signup(values,history))
   };
   return (
     <Paper className={classes.paper}>
@@ -87,6 +92,7 @@ export default function SignUpForm() {
                     </InputAdornment>
                   ),
                 }}
+                error={errors.email}
               />
               <Customized.Input
                 label="Password"
@@ -104,6 +110,7 @@ export default function SignUpForm() {
                     </InputAdornment>
                   ),
                 }}
+                error={errors.password}
               />
             </Grid>
             <Customized.Button

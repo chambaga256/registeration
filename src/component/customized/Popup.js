@@ -11,7 +11,7 @@ export default function Popup({ openPopup, setOpenPopup, children, title }) {
         <div className={classes.flex}>
           <Typography variant="body1">{title}</Typography>
           <Customized.Button
-            styles={{justify:'center', color:'#A3BCB6'}}
+            className={classes.button}
             variant='text'
             startIcon={<CloseIcon fontSize="small" />}
             onClick={() => setOpenPopup(false)}

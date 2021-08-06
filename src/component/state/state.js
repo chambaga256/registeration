@@ -2,14 +2,14 @@ export const state = {
   fullname: "",
   regNo: "",
   course: "",
-  universty: "",
+  university: "",
   email: "",
   password: "",
   gender: "",
   date: new Date(),
-  internshipCoure: "",
+  internshipCourse: "",
   mobile: "",
-  administrator:'',
+  administrator: "",
 };
 
 export const genderItems = [

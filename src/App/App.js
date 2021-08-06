@@ -1,5 +1,5 @@
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { theme } from "./theme";
 import Login from "../component/login/Login";
@@ -7,11 +7,16 @@ import SignUp from "../component/signUp/SignUp";
 import {Switch,Route} from 'react-router-dom';
 import Home from "../component/home/Home";
 import Header from "../component/header/Header";
+import { useDispatch } from "react-redux";
+import { getStudents } from "../Actions/student";
 
  
 
 const App = () => {
-  
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(getStudents())
+  },[dispatch])
   return (
     <ThemeProvider theme={theme}>
 

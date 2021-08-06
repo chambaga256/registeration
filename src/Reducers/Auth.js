@@ -13,10 +13,10 @@ export default function Auth(state = initialState, action) {
       };
     case LOGOUT:
       localStorage.clear();
-      return{
-          ...state,
-          user:null
-      }
+      return {
+        ...state,
+        user: null,
+      };
     default:
       return state;
   }

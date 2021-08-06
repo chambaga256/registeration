@@ -22,6 +22,9 @@ export default makeStyles(theme=>({
           }
     },
     button:{
-        marginLeft:'91%'
+        marginLeft:'91%',
+        '& .MuiButton-root':{
+            textTransform:'capitalize'
     },
+        }
 }))
