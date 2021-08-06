@@ -15,6 +15,7 @@ import useStyles from "./style";
 import { useDispatch } from "react-redux";
 import ExpandMoreSharpIcon from "@material-ui/icons/ExpandMoreSharp";
 import { LOGOUT } from "../../Actions/types";
+import Users from "../home/users/Users";
 function UserHeader({ image, name, setUser }) {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -79,6 +80,7 @@ function UserHeader({ image, name, setUser }) {
           </Grid>
         </Toolbar>
       </AppBar>
+      <Users/>
     </React.Fragment>
   );
 }

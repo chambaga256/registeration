@@ -10,6 +10,7 @@ import useStyles from "./styles";
 import StudentRegister from "../register/studentRegister";
 import Register from "../register/Register";
 import RegisterForm from "../form/RegisterForm";
+import Users from "./users/Users";
 export default function Home() {
   const space = { marginLeft: "10px" };
   const classes = useStyles();
@@ -40,7 +41,6 @@ export default function Home() {
             name={user.result.name}
             setUser={setUser}
           />
-          <StudentRegister name={user.result.name.charAt(0)} />
         </div>
       )}
     </React.Fragment>
