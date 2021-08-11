@@ -32,13 +32,11 @@ export default function LoginForm(props) {
   const {
     values,
     errors,
-    setValules,
     handleShowPassword,
     showPassword,
     handleInputChange,
     next,
     nextpage,
-    validate,
   } = UseForm(state, true);
 
   const googleFailure = (error) => {
