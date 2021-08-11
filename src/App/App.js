@@ -1,18 +1,16 @@
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import React, { useEffect } from "react";
-import "./App.css";
 import { theme } from "./theme";
 import Login from "../component/login/Login";
 import SignUp from "../component/signUp/SignUp";
-import {Switch,Route, Redirect} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import Home from "../component/home/Home";
-import Header from "../component/header/Header";
 import { useDispatch } from "react-redux";
 import { getStudents } from "../Actions/student";
 import StudentRegister from "../component/register/studentRegister";
 import Register from "../component/register/Register";
 import Dashboard from "../Dashboard/Dashboard";
-
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
  
 
 const App = () => {
@@ -20,7 +18,6 @@ const App = () => {
   useEffect(()=>{
     dispatch(getStudents())
   },[dispatch])
-  const user = JSON.parse(localStorage.getItem('profile'));
 
   return (
     <ThemeProvider theme={theme}>
